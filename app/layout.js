@@ -1,5 +1,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { NavBtn } from "@/components/buttons.js";
+import Image from "next/image";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +14,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} container mx-auto p-16`}>
+     <body className={`${inter.className} container mx-auto p-16`}>
+        <header className="flex justify-between items-center mb-4">
+              <Image
+                src="/asset/jtcargo-logo-retina.png"
+                alt="Vercel Logo"
+                className="dark:invert"
+                width={200}
+                height={24}
+                priority
+              />
+              <div>
+                <NavBtn label="Layanan" url="/layanan"></NavBtn>
+                <NavBtn label="Tentang Kami" url="/tentang-kami"></NavBtn>
+                <NavBtn label="Kontak" url="/kontak"></NavBtn>
+                <NavBtn label="Whatsapp" url="/wa"></NavBtn>
+              </div>
+          </header>
         {children}
       </body>
     </html>
