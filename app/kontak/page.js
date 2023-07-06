@@ -1,7 +1,7 @@
 export default function Page() {
     return (
       <>
-      <h1>ini Layanan</h1>
+      <h1>ini Kontak</h1>
       </>
     )
 }
