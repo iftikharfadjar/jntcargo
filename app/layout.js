@@ -14,36 +14,46 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} container mx-auto px-0 pt-16`}>
-        <header className="flex justify-between items-center mb-4">
-          <Link href="/">
-            <>
-              <Image
-                src="/asset/jtcargo-logo-retina.png"
-                alt="Vercel Logo"
-                className="dark:invert"
-                width={200}
-                height={24}
-                priority
-              />
-            </>
-          </Link>
-          <div>
-            <NavBtn label="Layanan" url="/layanan"></NavBtn>
-            <NavBtn label="Tentang Kami" url="/tentang-kami"></NavBtn>
-            <NavBtn label="Kontak" url="/kontak"></NavBtn>
-            <NavBtn label="Whatsapp" url="/wa"></NavBtn>
-          </div>
-        </header>
-        {children}
+      <body className={`${inter.className}`}>
+        <Header />
+
+        <div className="container mx-auto px-0 pt-16">
+          {children}
+        </div>
+
         <Footer />
       </body>
     </html>
   );
 }
 
-const Footer = () =>{
-  return(
+const Header = () => {
+  return (
+    <header className="flex flex-row justify-around  items-center mb-4 px-0 pt-16">
+      <Link href="/">
+        <>
+          <Image
+            src="/asset/jtcargo-logo-retina.png"
+            alt="Vercel Logo"
+            className="dark:invert"
+            width={200}
+            height={24}
+            priority
+          />
+        </>
+      </Link>
+      <div>
+        <NavBtn label="Layanan" url="/layanan"></NavBtn>
+        <NavBtn label="Tentang Kami" url="/tentang-kami"></NavBtn>
+        <NavBtn label="Kontak" url="/kontak"></NavBtn>
+        <NavBtn label="Whatsapp" url="/wa"></NavBtn>
+      </div>
+    </header>
+  )
+}
+
+const Footer = () => {
+  return (
     <footer
       className="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
       <div
@@ -51,7 +61,7 @@ const Footer = () =>{
         <div className="mr-12 hidden lg:block">
           <span>Get connected with us on social networks:</span>
         </div>
-        
+
         <div className="flex justify-center">
           <a href="#!" className="mr-6 text-neutral-600 dark:text-neutral-200">
             <svg
@@ -117,11 +127,11 @@ const Footer = () =>{
           </a>
         </div>
       </div>
-    
-      
+
+
       <div className="mx-6 py-10 text-center md:text-left">
         <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          
+
           <div className="">
             <h6
               className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
@@ -141,7 +151,7 @@ const Footer = () =>{
               elit.
             </p>
           </div>
-          
+
           <div className="">
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
@@ -149,26 +159,26 @@ const Footer = () =>{
             </h6>
             <p className="mb-4">
               <a href="#!" className="text-neutral-600 dark:text-neutral-200"
-                >Angular</a
+              >Angular</a
               >
             </p>
             <p className="mb-4">
               <a href="#!" className="text-neutral-600 dark:text-neutral-200"
-                >React</a
+              >React</a
               >
             </p>
             <p className="mb-4">
               <a href="#!" className="text-neutral-600 dark:text-neutral-200"
-                >Vue</a
+              >Vue</a
               >
             </p>
             <p>
               <a href="#!" className="text-neutral-600 dark:text-neutral-200"
-                >Laravel</a
+              >Laravel</a
               >
             </p>
           </div>
-          
+
           <div className="">
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
@@ -176,26 +186,26 @@ const Footer = () =>{
             </h6>
             <p className="mb-4">
               <a href="#!" className="text-neutral-600 dark:text-neutral-200"
-                >Pricing</a
+              >Pricing</a
               >
             </p>
             <p className="mb-4">
               <a href="#!" className="text-neutral-600 dark:text-neutral-200"
-                >Settings</a
+              >Settings</a
               >
             </p>
             <p className="mb-4">
               <a href="#!" className="text-neutral-600 dark:text-neutral-200"
-                >Orders</a
+              >Orders</a
               >
             </p>
             <p>
               <a href="#!" className="text-neutral-600 dark:text-neutral-200"
-                >Help</a
+              >Help</a
               >
             </p>
           </div>
-          
+
           <div>
             <h6
               className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
@@ -256,17 +266,17 @@ const Footer = () =>{
           </div>
         </div>
       </div>
-    
-      
+
+
       <div className="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
         <span>© 2023 Copyright:</span>
         <a
           className="font-semibold text-neutral-600 dark:text-neutral-400"
           href="https://tailwind-elements.com/"
-          >Tailwind Elements</a
+        >Tailwind Elements</a
         >
       </div>
     </footer>
-    )
-  
+  )
+
 }
