@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className}`}>
         <Header />
 
-        <div className="container mx-auto px-0 pt-16">
+        <main className="container mx-auto px-0 pt-16 py-12 flex flex-col justify-around ">
           {children}
-        </div>
+        </main>
 
         <Footer />
       </body>
@@ -44,7 +44,7 @@ const Header = () => {
       </Link>
       <div>
         <NavBtn label="Layanan" url="/layanan"></NavBtn>
-        <NavBtn label="Tentang Kami" url="/tentang-kami"></NavBtn>
+        {/* <NavBtn label="Tentang Kami" url="/tentang-kami"></NavBtn> */}
         <NavBtn label="Kontak" url="/kontak"></NavBtn>
         <NavBtn label="Whatsapp" url="/wa"></NavBtn>
       </div>
