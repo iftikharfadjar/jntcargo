@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from 'react-hook-form';
-import * as z from "zod"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -13,57 +13,97 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 
 const formSchema = z.object({
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
-})
+});
 
-
+// type FormData = z.infer<typeof FormData>;
 
 export default function ProfileForm() {
-  
-
   // 1. Define your form.
-  const { handleSubmit }  = useForm<z.infer<typeof formSchema>>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
     },
-  })
+  });
 
   // 2. Define a submit handler.
   function onSubmit(values) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values)
+    console.log(values);
   }
 
-
   return (
-    <Form >
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Nama Lengkap</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Sesuai KTP" {...field} />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+
+        <FormField
+          control={form.control}
+          name="bisnisname"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Nama Bisnis Anda</FormLabel>
+              <FormControl>
+                <Input placeholder="Biarkan kosong jika personal" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="telp"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>No. Telepon</FormLabel>
+              <FormControl>
+                <Input placeholder="contoh 08xxxxxxxxxx" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="telp"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Request </FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="Ceritakan kebutuhan anda secara singkat. Tim kami akan segera mempelajari kemudian kembali kepada anda dengan solusi :)  "
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <Button type="submit">Minta Penawaran </Button>
       </form>
     </Form>
-  )
+  );
 }
