@@ -20,6 +20,11 @@ const formSchema = z.object({
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
+  bussinessname: z.string(),
+  telp: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+  req: z.string(),
 });
 
 // type FormData = z.infer<typeof FormData>;
@@ -30,6 +35,9 @@ export default function ProfileForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
+      bussinessname: "",
+      telp: "",
+      req: "",
     },
   });
 
@@ -59,7 +67,7 @@ export default function ProfileForm() {
 
         <FormField
           control={form.control}
-          name="bisnisname"
+          name="bussinessname"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Nama Bisnis Anda</FormLabel>
@@ -87,10 +95,10 @@ export default function ProfileForm() {
 
         <FormField
           control={form.control}
-          name="telp"
+          name="req"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Request </FormLabel>
+              <FormLabel>Special Request</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Ceritakan kebutuhan anda secara singkat. Tim kami akan segera mempelajari kemudian kembali kepada anda dengan solusi :)  "
@@ -102,7 +110,7 @@ export default function ProfileForm() {
           )}
         />
 
-        <Button type="submit">Minta Penawaran </Button>
+        <Button type="submit">Minta Penawaran</Button>
       </form>
     </Form>
   );
