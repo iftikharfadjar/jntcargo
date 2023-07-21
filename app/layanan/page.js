@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CardMd } from "@/components/cards.js";
+import { CardDef } from "@/components/cards.js";
 import { MyAccordion } from "@/components/accordion.js";
 
 export default function Page() {
@@ -17,7 +17,7 @@ export default function Page() {
 
       <div className="flex  w-full justify-around">
         <MyAccordion />
-        <CardMd />
+        <CardDef />
       </div>
 
       <div>
@@ -29,7 +29,7 @@ export default function Page() {
         <CardPrice />
       </div>
 
-      <CardMd />
+      <CardDef />
 
       </>
     )
@@ -51,12 +51,12 @@ const ServicePhoto = () => {
 const CardService = () => {
   return (
     <div className="grid grid-cols-3">
-    <CardMd />
-    <CardMd />
-    <CardMd />
-    <CardMd />
-    <CardMd />
-    <CardMd />
+    <CardDef />
+    <CardDef />
+    <CardDef />
+    <CardDef />
+    <CardDef />
+    <CardDef />
   </div>
   )
 }
@@ -64,9 +64,9 @@ const CardService = () => {
 const CardPrice = () => {
   return (
     <div className="flex justify-around">
-    <CardMd />
-    <CardMd />
-    <CardMd />
+    <CardDef />
+    <CardDef />
+    <CardDef />
   </div>
   )
 }
