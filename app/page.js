@@ -47,7 +47,7 @@ const MainPhoto = () => {
 
 const CardHome = () => {
   return (
-    <div className="mt-36 relative flex h-[80vh] w-full flex-row justify-around">
+    <div className="mt-36 bg-green-400 relative flex h-[90vh] w-full flex-row justify-around">
       <div className="w-1/2 flex justify-center items-center">
         <div className={"flex flex-row w-4/6 h-4/6 "}>
         <CardWithDesc
@@ -71,31 +71,31 @@ const CardHome = () => {
       </div>
 
 
-      <div className="flex   justify-around ">
-        <div className="flex  flex-col gap-20">
-          <div className={"flex justify-center items-center h-[40%]"}>
-            <CardWithPhotoTop src={"/asset/pengiriman-cepat.svg"} h="h-[90%]" w="w-[90%]" title="Pengiriman Cepat">
+      <div className="flex  bg-red-400  justify-around ">
+        <div className="flex  h-[90%] bg-blue-300  flex-col gap-20">
+          <div className={"flex justify-center items-center h-[70%]"}>
+            <CardWithPhotoTop src={"/asset/pengiriman-cepat.svg"} wp={200} hp={200} h="h-full     " w="w-[90%]" title="Pengiriman Cepat">
               Pengiriman melalui darat dan udara.
             </CardWithPhotoTop>
           </div>
-          <div className={"flex justify-center items-center h-[40%] "}>
-            <CardDef h="h-[90%]" w="w-[90%]"title="Kargo Besar">
-              Barang dengan berat minimal 50 kg hingga 500 kg.
-            </CardDef>
+          <div className={"flex justify-center items-center h-[70%] "}>
+            <CardWithPhotoTop src={"/asset/tepat-waktu.svg"} wp={200} hp={200} h="h-full" w="w-[90%]"title="Kargo Besar">
+              Pengiriman tepat waktu
+            </CardWithPhotoTop>
           </div>
         </div>
-        <div className="flex flex-col justify-around">
-          <div className={"flex mt-20 flex-row justify-center items-center h-[40%] "}>
-            <CardDef h="h-[90%]" w="w-[90%]"title="Kargo Kecil dan besar">
+        <div className="mt-20 h-[90%] flex bg-orange-400 flex-col justify-around">
+          <div className={"flex flex-row justify-center items-center h-[70%] "}>
+            <CardWithPhotoTop src={"/asset/kargo-besar-kecil.svg"} wp={200} hp={200} h="h-full" w="w-[90%]"title="Kargo Kecil dan besar">
               Barang dengan berat minimal 11 kg.
-            </CardDef>
+            </CardWithPhotoTop>
           </div>
-          <div className={"flex mt-20 justify-center items-center h-[40%]  "}>
-            <CardDef h="h-[90%]" w="w-[90%]"  title="Layanan Extra">
+          <div className={"flex mt-20 justify-center items-center h-[70%]  "}>
+            <CardWithPhotoTop src={"/asset/layanan-extra.svg"} wp={200} hp={200} h="h-full  " w="w-[90%]"  title="Layanan Extra">
               Asuransi barang, kemasan aman, layanan warehouse, perwakilan
               penerimaan paket, pengembalian tanda terima, layanan gabungan
               warehouse dan distribusi, lengkap.
-            </CardDef>
+            </CardWithPhotoTop>
           </div>
         </div>
       </div>
